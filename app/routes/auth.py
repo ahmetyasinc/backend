@@ -13,11 +13,9 @@ ALGORITHM = "HS256"
 
 router = APIRouter()
 
-# Giriş verileri için Pydantic modeli
 class LoginRequest(BaseModel):
     username: str
     password: str
-    rememberMe: bool = False
 
 # Giriş verileri için Pydantic modeli
 class RegisterRequest(BaseModel):
@@ -36,32 +34,53 @@ class RefreshTokenRequest(BaseModel):
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-@router.post("/api/login/")
-async def login(data: LoginRequest, db: AsyncSession = Depends(get_db)):
+@router.post("/login/")
+async def login(response: Response, data: LoginRequest, db: AsyncSession = Depends(get_db)):
+    username = data.username
+    password = data.password
+    print(username, password)
     # Veritabanında kullanıcıyı sorgula
-    result = await db.execute(select(User).where(User.name == data.username))
-    user = result.scalars().first()
 
+    result = await db.execute(select(User).where(User.name == username))
+    user = result.scalars().first()
+    print(user)
     if not user:
         raise HTTPException(status_code=401, detail="Geçersiz kullanıcı adı veya şifre!")
 
     # Şifre kontrolü (Burada basit bir string kontrolü yaptım, ama bcrypt gibi bir kütüphane kullanmalısın)
-    if user.password != data.password:
+    if user.password != password:
         raise HTTPException(status_code=401, detail="Geçersiz kullanıcı adı veya şifre!")
 
     access_token = create_access_token({"sub": user.name})
     refresh_token = create_refresh_token({"sub": user.name})
 
-    logger.info(f"Kullanıcı giriş yaptı: {user.name}")
-    return {
-        "access_token": access_token,
-        "refresh_token": refresh_token,
-        "token_type": "bearer"
-    }
+    response.set_cookie(
+        key="access_token",
+        value=access_token,
+        httponly=False,
+        secure=True,
+        max_age=1800,
+        samesite="None",
+        domain="localhost",
+        path="/"
+    )
+
+    response.set_cookie(
+        key="refresh_token",
+        value=refresh_token,
+        httponly=False,
+        secure=True,
+        max_age=1800,
+        samesite="None",
+        domain="localhost",
+        path="/"
+    )
+
+    return {"message": "Giriş başarılı"}
 
 
 # Kullanıcı ekleme fonksiyonu
-@router.post("/api/register")
+@router.post("/api/register/")
 async def add_user(data: RegisterRequest, db: AsyncSession = Depends(get_db)):
     # Aynı e-posta adresi zaten var mı kontrol et
     result = await db.execute(select(User).where(User.email == data.email))

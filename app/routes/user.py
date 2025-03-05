@@ -6,15 +6,12 @@ from app.models import User
 
 router = APIRouter()
 
-# Kullanıcıları listeleme endpoint'i
 @router.get("/users")
 async def get_users(db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(User))
     users = result.scalars().all()
     return {"users": users}
 
-
-# Kullanıcı güncelleme (Edit) fonksiyonu
 @router.put("/edit/{user_id}")
 async def update_user(user_id: int, name: str = Form(None), email: str = Form(None), password: str = Form(...), db: AsyncSession = Depends(get_db)):
     # Kullanıcıyı veritabanında ara

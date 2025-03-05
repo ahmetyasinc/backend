@@ -20,10 +20,6 @@ app.add_middleware(
 )
 
 
-@app.get("/")
-def read_root():
-    return {"message": "API is running"}
-
 @app.get("/ping")
 def ping():
     return {"status": "ok"}
@@ -36,7 +32,7 @@ def get_trades():
     ]
     return {"trades": sample_trades}
 
-@app.get("/api/hero-infos")
+@app.get("/api/hero-infos/")
 def get_hero_infos():
     user_count = 8
     trader_count = 3
