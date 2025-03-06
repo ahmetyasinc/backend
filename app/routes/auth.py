@@ -19,8 +19,8 @@ class LoginRequest(BaseModel):
 
 # Giriş verileri için Pydantic modeli
 class RegisterRequest(BaseModel):
-    firstName: str
-    lastName: str
+    first_name: str
+    last_name: str
     username: str
     email: str
     password: str
@@ -34,14 +34,15 @@ class RefreshTokenRequest(BaseModel):
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-@router.post("/login/")
+@router.post("/api/login/")
 async def login(response: Response, data: LoginRequest, db: AsyncSession = Depends(get_db)):
+    print(data)
     username = data.username
     password = data.password
     print(username, password)
     # Veritabanında kullanıcıyı sorgula
 
-    result = await db.execute(select(User).where(User.name == username))
+    result = await db.execute(select(User).where(User.username == username))
     user = result.scalars().first()
     print(user)
     if not user:
@@ -82,6 +83,7 @@ async def login(response: Response, data: LoginRequest, db: AsyncSession = Depen
 # Kullanıcı ekleme fonksiyonu
 @router.post("/api/register/")
 async def add_user(data: RegisterRequest, db: AsyncSession = Depends(get_db)):
+    print(data)
     # Aynı e-posta adresi zaten var mı kontrol et
     result = await db.execute(select(User).where(User.email == data.email))
     existing_user = result.scalars().first()
@@ -92,12 +94,11 @@ async def add_user(data: RegisterRequest, db: AsyncSession = Depends(get_db)):
         raise HTTPException(status_code=400, detail="Bu e-posta zaten kullanılıyor!")
 
     # Yeni kullanıcı oluştur
-    user = User(name=data.username, email=data.email, password=data.password)
+    user = User(name=data.first_name, last_name=data.last_name, username=data.username, email=data.email, password=data.password)
     db.add(user)
     await db.commit()  # Değişiklikleri kaydet
     await db.refresh(user)  # Kullanıcıyı güncelle
-    return {"message": "User created successfully", "user": {"id": user.id, "name": user.name, "email": user.email, "password": user.password}}  
-
+    return {"message": "Kayıt başarılı"}
 
 @router.post("/api/refresh-token/")
 async def refresh_token(request: RefreshTokenRequest, response: Response, db: AsyncSession = Depends(get_db)):
