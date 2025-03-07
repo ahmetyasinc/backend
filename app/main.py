@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from app.routes.user import router as user_router
 from app.routes.auth import router as auth_router
+from app.routes.profile.indicator import router as indicator_router
 
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -8,6 +9,7 @@ app = FastAPI()
 
 app.include_router(user_router)  # Router'ı FastAPI'ye dahil et!
 app.include_router(auth_router)  # Router'ı FastAPI'ye dahil et!
+app.include_router(indicator_router)  # Router'ı FastAPI'ye dahil et!
 
 
 # CORS Middleware ekle
@@ -24,13 +26,7 @@ app.add_middleware(
 def ping():
     return {"status": "ok"}
 
-@app.get("/trades")
-def get_trades():
-    sample_trades = [
-        {"id": 1, "symbol": "BTCUSDT", "side": "buy", "price": 50000, "quantity": 0.1},
-        {"id": 2, "symbol": "ETHUSDT", "side": "sell", "price": 3500, "quantity": 1.5},
-    ]
-    return {"trades": sample_trades}
+
 
 @app.get("/api/hero-infos/")
 def get_hero_infos():

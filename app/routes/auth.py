@@ -79,7 +79,6 @@ async def login(response: Response, data: LoginRequest, db: AsyncSession = Depen
 
     return {"message": "Giriş başarılı"}
 
-
 # Kullanıcı ekleme fonksiyonu
 @router.post("/api/register/")
 async def add_user(data: RegisterRequest, db: AsyncSession = Depends(get_db)):
