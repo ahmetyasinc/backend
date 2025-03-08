@@ -1,51 +1,97 @@
-from fastapi import APIRouter, HTTPException, Depends, Response
-from jose import JWTError, jwt
+import asyncpg
+import asyncio
+import asyncpg
+import asyncio
+from fastapi import APIRouter, Depends
+from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.future import select
 from pydantic import BaseModel
-from app.models import User
 from app.database import get_db
-from app.core.auth import create_access_token, create_refresh_token  # JWT fonksiyonlarını içe aktar
-
-import json
-
-from app.models.profile.binance_data import MainData
-from app.routes.profile.get_binance_data import get_binance_data
+from app.services.binance_data.manage_data import binance_websocket
+from app.services.binance_data.save_data import save_binance_data
+from app.services.binance_data.get_data import get_binance_data
+from fastapi import APIRouter, Depends
 
 router = APIRouter()
 
-class main_data(BaseModel):
-    user_id: int
+db_pool = None  # Global bağlantı havuzu
+DATABASE_URL = "postgresql://postgres:admin@localhost:5432/balina_db"
+
+class download_data(BaseModel):
+    symbol: str
+    interval: str
+
+class get_data(BaseModel):
     symbol: str
     interval: str
 
 
-@router.get("/api/get-binance-data/")
-async def get_trades(data: main_data, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(MainData).where(MainData.user_id == data.user_id))
-    have_data = result.scalars().first()
+@router.post("/api/get-binance-data/")
+async def get_trades(data: get_data, db: AsyncSession = Depends(get_db)):
+    """Veritabanından belirtilen sembol ve zaman aralığındaki son 1000 veriyi JSON olarak getirir."""
 
-    # Kullanıcının daha önce verisi varsa ve aynı symbol + interval ile istek yapıyorsa
-    if have_data and have_data.symbol == data.symbol and have_data.interval == data.interval:
-        return have_data.data
+    query = text("""
+    SELECT json_agg(row_to_json(t))
+    FROM (
+        SELECT * 
+        FROM public.binance_data
+        WHERE coin_id = :symbol 
+          AND interval = :interval
+        ORDER BY timestamp ASC
+    ) t
+    """)
 
-    # Binance'den veri çek
-    candle_data = get_binance_data(symbol=data.symbol, interval=data.interval)
-    candle_data = json.dumps(candle_data)
 
-    if have_data:
-        # Eğer kayıt varsa, güncelle
-        have_data.symbol = data.symbol
-        have_data.interval = data.interval
-        have_data.data = candle_data
-    else:
-        # Eğer kayıt yoksa, yeni kayıt oluştur
-        mainData = MainData(user_id=data.user_id, symbol=data.symbol, interval=data.interval, data=candle_data)
-        db.add(mainData)
+    result = await db.execute(query, {"symbol": data.symbol, "interval": data.interval})
+    json_data = result.scalar()  # Tek bir JSON nesnesi döndürülecek
 
-    await db.commit()
-    if have_data:
-        await db.refresh(have_data)  # Güncellenen veriyi tekrar yükle
+    return {"status": "success", "data": json_data}
 
-    return candle_data
 
+
+# Binanceden veri indirime
+@router.get("/api/download-binance-data/")
+async def get_trades(data: download_data, db: AsyncSession = Depends(get_db)):
+    """Binance'den 5000 mumluk veri çekip veritabanına kaydeder."""
+    candles = get_binance_data(symbol=data.symbol, interval=data.interval)
+
+    if not candles:
+        return {"error": "Binance API'den veri alınamadı."}
+
+    result = await save_binance_data(db, data.symbol, data.interval, candles)
+    return result
+
+# WEBSOCKET BAĞLANTILARI
+startup_called = False
+@router.on_event("startup")
+async def startup():
+    """Uygulama başladığında veritabanı bağlantı havuzunu oluştur"""
+    global db_pool, startup_called
+
+    if startup_called:  # Eğer zaten çalıştırılmışsa, tekrar başlatma
+        return
+    startup_called = True
+
+    db_pool = await asyncpg.create_pool(DATABASE_URL)
+    asyncio.create_task(run_websocket_with_reconnect())  # WebSocket görevini başlat
+
+# FastAPI Kapanırken Veritabanı Bağlantısını Kapat
+@router.on_event("shutdown")
+async def shutdown():
+    """Uygulama kapanırken veritabanı bağlantısını kapat"""
+    print("🔌 Veritabanı bağlantısı kapatılıyor...")
+    global db_pool
+    if db_pool:
+        await db_pool.close()
+
+# WebSocket Bağlantısını Yönet (Koparsa Yeniden Bağlan)
+async def run_websocket_with_reconnect():
+    """ WebSocket bağlantısı koparsa otomatik olarak tekrar bağlan """
+    while True:
+        try:
+            await binance_websocket(db_pool)
+        except Exception as e:
+            print(f"❌ WebSocket bağlantısı kesildi: {e}")
+            print("⏳ 5 saniye sonra tekrar bağlanıyor...")
+            await asyncio.sleep(5)  # 5 saniye bekleyip tekrar bağlan
+    
