@@ -1,15 +1,22 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from app.routes.user import router as user_router
 from app.routes.auth import router as auth_router
-from app.routes.profile.indicator import router as indicator_router
+from app.routes.profile.indicator.indicator_data import protected_router as indicator_data_router
+from app.routes.profile.indicator.indicator import protected_router as indicator_router
+from app.routes.profile.indicator.websocket_binance import websocket_router as websocket_binance_router
+
 
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-app.include_router(user_router)  # Router'ı FastAPI'ye dahil et!
-app.include_router(auth_router)  # Router'ı FastAPI'ye dahil et!
-app.include_router(indicator_router)  # Router'ı FastAPI'ye dahil et!
+# USER ROUTES
+app.include_router(user_router)
+app.include_router(auth_router)
+# INDICATOR ROUTES
+app.include_router(websocket_binance_router)
+app.include_router(indicator_data_router)
+app.include_router(indicator_router) 
 
 
 # CORS Middleware ekle

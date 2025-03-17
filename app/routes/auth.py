@@ -52,16 +52,15 @@ async def login(response: Response, data: LoginRequest, db: AsyncSession = Depen
     if user.password != password:
         raise HTTPException(status_code=401, detail="Geçersiz kullanıcı adı veya şifre!")
 
-    access_token = create_access_token({"sub": user.name})
-    refresh_token = create_refresh_token({"sub": user.name})
+    access_token = create_access_token({"sub": str(user.id)})
+    refresh_token = create_refresh_token({"sub": str(user.id)})
 
     response.set_cookie(
         key="access_token",
         value=access_token,
-        httponly=False,
-        secure=True,
+        secure=False,
         max_age=1800,
-        samesite="None",
+        samesite="Lax",
         domain="localhost",
         path="/"
     )
@@ -69,10 +68,9 @@ async def login(response: Response, data: LoginRequest, db: AsyncSession = Depen
     response.set_cookie(
         key="refresh_token",
         value=refresh_token,
-        httponly=False,
-        secure=True,
+        secure=False,
         max_age=1800,
-        samesite="None",
+        samesite="Lax",
         domain="localhost",
         path="/"
     )
