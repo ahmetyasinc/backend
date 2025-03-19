@@ -1,21 +1,42 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from app.routes.user import router as user_router
 from app.routes.auth import router as auth_router
-from app.routes.profile.indicator import router as indicator_router
+from app.routes.profile.indicator.indicator_data import protected_router as indicator_data_router
+from app.routes.profile.indicator.indicator import protected_router as indicator_router
+from app.routes.profile.indicator.indicator_run import protected_router as indicator_run_router
+from app.routes.profile.indicator.indicator_adjustment import protected_router as indicator_adjustment_router
+from app.routes.profile.indicator.websocket_binance import websocket_router as websocket_binance_router
+from app.routes.profile.binance_coins.binance_coins import protected_router as binance_coins_router
+from app.routes.profile.strategy.strategy import protected_router as strategy_router
+from app.routes.profile.strategy.strategy_adjustment import protected_router as strategy_adjustment_router
+from app.routes.profile.strategy.strategy_run import protected_router as strategy_run_router
 
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-app.include_router(user_router)  # Router'ı FastAPI'ye dahil et!
-app.include_router(auth_router)  # Router'ı FastAPI'ye dahil et!
-app.include_router(indicator_router)  # Router'ı FastAPI'ye dahil et!
+
+# USER ROUTES
+app.include_router(user_router)
+app.include_router(auth_router)
+# COINS ROUTES
+app.include_router(binance_coins_router)
+# INDICATOR ROUTES
+app.include_router(websocket_binance_router)
+app.include_router(indicator_data_router)
+app.include_router(indicator_router) 
+app.include_router(indicator_run_router) 
+app.include_router(indicator_adjustment_router) 
+# STRATEGY ROUTES
+app.include_router(strategy_router)
+app.include_router(strategy_adjustment_router)
+app.include_router(strategy_run_router)
 
 
 # CORS Middleware ekle
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Güvenlik için sadece frontend URL'sini koy
+    allow_origins=["http://localhost:3000", "http://localhost:3001"],  # Güvenlik için sadece frontend URL'sini koy
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -25,7 +46,6 @@ app.add_middleware(
 @app.get("/ping")
 def ping():
     return {"status": "ok"}
-
 
 
 @app.get("/api/hero-infos/")

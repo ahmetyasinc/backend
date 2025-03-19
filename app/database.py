@@ -10,7 +10,7 @@ load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+asyncpg://user:admin@localhost:5432/balina_db")
 
 # Asenkron SQLAlchemy engine oluştur
-engine = create_async_engine(DATABASE_URL, echo=True)
+engine = create_async_engine(DATABASE_URL, echo=False) # echo=True olursa SQL sorgularını görebilirsin
 
 # Asenkron veritabanı oturumu (session) oluşturucu
 AsyncSessionLocal = sessionmaker(

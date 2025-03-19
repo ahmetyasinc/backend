@@ -1,4 +1,5 @@
 from sqlalchemy import Column, BigInteger, String, DateTime, Boolean, func, Enum
+from sqlalchemy.orm import relationship, deferred
 from app.database import Base
 import enum
 
@@ -35,7 +36,10 @@ class User(Base):
     created_at = Column(DateTime, default=func.now())  # Hesap oluşturulma tarihi
     updated_at = Column(DateTime, default=func.now(), onupdate=func.now())  # Son güncelleme
 
+    # RELOTIONSHIP - MODELLERİ STRING OLARAK TANIMLADIK
+    pinned_coins = relationship("BinanceCoinsPinned", back_populates="user", cascade="all, delete-orphan")
+    favorite_indicators = relationship("IndicatorsFavorite", back_populates="user", cascade="all, delete-orphan")
+    favorite_strategies = relationship("StrategiesFavorite", back_populates="user", cascade="all, delete-orphan")
+
     def __repr__(self):
         return f"<User(id={self.id}, name={self.name}, email={self.email}, role={self.role})>"
-
-

@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, JSON, TIMESTAMP, func, UniqueCon
 from app.database import Base
 
 class BinanceData(Base):
-    __tablename__ = "BinanceData"
+    __tablename__ = "binance_data"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     coin_id = Column(String(50), nullable=False)
