@@ -10,7 +10,7 @@ from core.config import BINANCE_API_URL
 # Logger ayarları
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
-
+#qwrerw
 BASE_URL = "wss://stream.binance.com:9443/stream?streams="  # Combined stream için base URL
 MAX_LISTEN_KEYS_PER_WS = 100  # Bir WebSocket başına maksimum listenKey sayısı
 PING_INTERVAL = 30  # WebSocket'e her 30 saniyede bir ping atılacak
