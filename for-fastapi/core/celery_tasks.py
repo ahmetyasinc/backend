@@ -8,3 +8,5 @@ celery_app = Celery("fastapi_celery", broker=f"redis://{settings.REDIS_HOST}:{se
 def test_celery(word: str) -> str:
     time.sleep(5)
     return f"test task return {word}"
+
+#asdasd
