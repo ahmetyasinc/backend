@@ -6,6 +6,7 @@ class IndicatorCreate(BaseModel):
     code: str
 
 class IndicatorUpdate(BaseModel):
+    id: int
     name: str
     code: str
 

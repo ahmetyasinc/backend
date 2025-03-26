@@ -23,6 +23,7 @@ async def get_public_strategies(
                 Strategy.code,
                 #Strategy.created_at,
                 Strategy.public,
+                Strategy.tecnic,
                StrategiesFavorite.id.isnot(None).label("favorite")  # Eğer favori varsa True, yoksa False döner
                )
                .outerjoin(StrategiesFavorite,  # LEFT JOIN işlemi
@@ -33,6 +34,31 @@ async def get_public_strategies(
     public_strategies = result.mappings().all()
 
     return {"public_strategies": public_strategies}
+
+@protected_router.get("/api/tecnic-strategies/")
+async def get_tecnic_strategies(
+    db: AsyncSession = Depends(get_db),
+    user_id: dict = Depends(verify_token)
+    ):
+    """Public olan tüm indikatörleri getirir."""
+    
+    result = await db.execute(
+        select(Strategy.id,
+                Strategy.name,
+                Strategy.code,
+                #Strategy.created_at,
+                Strategy.public,
+                Strategy.tecnic,
+               StrategiesFavorite.id.isnot(None).label("favorite")  # Eğer favori varsa True, yoksa False döner
+               )
+               .outerjoin(StrategiesFavorite,  # LEFT JOIN işlemi
+                   (StrategiesFavorite.strategy_id == Strategy.id) &
+                   (StrategiesFavorite.user_id == int(user_id)))
+               .where(Strategy.tecnic == True)
+    )
+    public_strategies = result.mappings().all()
+
+    return {"tecnic_strategies": public_strategies}
 
 @protected_router.get("/api/get-strategies/")
 async def get_strategies(
@@ -86,18 +112,24 @@ async def create_strategy(
     await db.commit()
     await db.refresh(new_strategy)
 
-    return {"message": "Strategy created successfully"}
+    return {
+        "id": new_strategy.id,
+        "name": new_strategy.name,
+        "code": new_strategy.code,
+        "tecnic": new_strategy.tecnic,
+        "public": new_strategy.public,
+        "favorite": False
+    }
 
-@protected_router.put("/api/edit-strategy/{strategy_id}/")
+@protected_router.put("/api/edit-strategy/")
 async def update_strategy(
-    strategy_id: int,
     strategy_data: StrategyUpdate,
     db: AsyncSession = Depends(get_db),
     user_id: dict = Depends(verify_token)
 ):
     """Belirtilen strateji bilgilerini günceller. Eğer strateji bulunamazsa hata döner."""
     
-    result = await db.execute(select(Strategy).where(Strategy.id == strategy_id, Strategy.user_id == int(user_id)))
+    result = await db.execute(select(Strategy).where(Strategy.id == strategy_data.id, Strategy.user_id == int(user_id)))
     strategy = result.scalars().first()
 
     if not strategy:

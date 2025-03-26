@@ -47,6 +47,10 @@ async def run_user_indicator(user_code: str, data: list[dict]):
                 
 
                 # ✅ Veri Tipleri
+                "float": float,
+                "int": int,
+                "str": str,
+                "bool": bool,
                 "list": list,
                 "dict": dict,
                 "tuple": tuple,

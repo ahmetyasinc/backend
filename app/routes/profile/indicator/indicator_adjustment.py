@@ -26,7 +26,7 @@ async def add_favorite_indicator(
         raise HTTPException(status_code=404, detail="Böyle bir gösterge bulunamadı!")
 
     # Eğer indikatör başkasına ait ve public değilse hata döndür
-    if indicator.user_id != int(user_id) and not indicator.public:
+    if indicator.user_id != int(user_id) and not indicator.public and not indicator.tecnic:
         raise HTTPException(status_code=403, detail="Bu gösterge özel olduğu için favorilere ekleyemezsiniz!")
 
     # Zaten favorilere eklenmiş mi kontrol et

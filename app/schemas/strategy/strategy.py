@@ -6,12 +6,13 @@ class StrategyCreate(BaseModel):
     code: str
 
 class StrategyUpdate(BaseModel):
+    id: int
     name: str
     code: str
 
 class StrategyRun(BaseModel):
     strategy_id: int
-    indicator_id: list[int]
+    strategy_id: list[int]
     binance_symbol: str
     interval: str
     end: datetime

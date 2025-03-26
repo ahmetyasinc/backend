@@ -13,7 +13,7 @@ import time
 
 protected_router = APIRouter()
 
-@protected_router.get("/api/run-indicator/")
+@protected_router.post("/api/run-indicator/")
 async def run_indicator(
     indicator_data: IndicatorRun,
     db: AsyncSession = Depends(get_db),
@@ -74,7 +74,7 @@ async def run_indicator(
         raise HTTPException(status_code=404, detail="Indicator not found.")
 
     # **3️⃣ Kullanıcı yetkisini doğrula**
-    if indicator.user_id != int(user_id) and not indicator.public:
+    if indicator.user_id != int(user_id) and not indicator.public and not indicator.tecnic:
         raise HTTPException(status_code=403, detail="You are not authorized to access this indicator.")
 
     # **4️⃣ Çekilen veriyi JSON formatına çevir**

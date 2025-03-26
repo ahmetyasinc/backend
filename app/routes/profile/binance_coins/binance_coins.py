@@ -92,7 +92,7 @@ async def pin_binance_coin(
     existing_favorite = result.scalars().first()
 
     if existing_favorite:
-        raise HTTPException(status_code=400, detail="Bu gösterge zaten favorilere eklenmiş!")
+        raise HTTPException(status_code=400, detail="Bu coin zaten pinlenmiş!")
 
     # Yeni favori kaydı oluştur
     new_pinned = BinanceCoinsPinned(
@@ -104,4 +104,33 @@ async def pin_binance_coin(
     await db.commit()
     await db.refresh(new_pinned)
 
-    return {"message": "Indicator added to favorites successfully"}
+    return {"message": "Coin added to pinned successfully"}
+
+
+@protected_router.delete("/api/unpin-binance-coin/")
+async def unpin_binance_coin(
+    pin_coin_data: PinCoin,
+    db: AsyncSession = Depends(get_db),
+    user_id: dict = Depends(verify_token)
+):
+    """Kullanıcının pinlediği coini kaldırır."""
+
+    # Kullanıcının bu coini pinleyip pinlemediğini kontrol et
+    result = await db.execute(
+        select(BinanceCoinsPinned)
+        .where(
+            BinanceCoinsPinned.user_id == int(user_id),
+            BinanceCoinsPinned.coin_id == pin_coin_data.coin_id
+        )
+    )
+    pinned_coin = result.scalars().first()
+
+    # Eğer kayıt yoksa hata döndür
+    if not pinned_coin:
+        raise HTTPException(status_code=404, detail="Bu coin zaten pinlenmemiş!")
+
+    # Kayıt varsa, sil ve değişiklikleri kaydet
+    await db.delete(pinned_coin)
+    await db.commit()
+
+    return {"message": "Coin removed from pinned successfully"}
