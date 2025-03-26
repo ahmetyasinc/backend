@@ -17,7 +17,7 @@ def plot(indicator_results, indicator_name: str, plot_type: str, on_graph: bool,
     - **Histogram (`histogram`)**: `bar_color`, `bar_width`
     - **Alan Doldurma (`fill`)**: `fill_color`, `opacity`
     """
-    print("Indicator Data: ", indicator_data)
+
     if not isinstance(indicator_data, list) or not all(isinstance(i, tuple) and len(i) == 2 for i in indicator_data):
         raise ValueError("Indicator data must be a list of tuples (timestamp, value or (low, high)).")
 
@@ -35,7 +35,6 @@ def plot(indicator_results, indicator_name: str, plot_type: str, on_graph: bool,
         if is_valid(value)
     ]
 
-
     # Varsayılan ayarlar (Kullanıcı belirtmezse bunlar kullanılacak)
     plot_settings = {}
 
@@ -50,8 +49,6 @@ def plot(indicator_results, indicator_name: str, plot_type: str, on_graph: bool,
     elif plot_type == "area":
         plot_settings["color"] = kwargs.get("color", "#00FF00")  # Varsayılan doldurma rengi: Yeşil
         plot_settings["opacity"] = kwargs.get("opacity", 0.5)  # Varsayılan opaklık: %50
-
-    print("Data: ", cleaned_data)
 
     # Yeni ayarları ekleyerek JSON'a dönüştürüyoruz
     indicator_results.append({

@@ -88,7 +88,7 @@ async def get_strategies(
 
     return {"strategies": [dict(row) for row in strategies]}
 
-@protected_router.get("/api/add-strategy/")
+@protected_router.post("/api/add-strategy/")
 async def create_strategy(
     strategy_data: StrategyCreate,
     db: AsyncSession = Depends(get_db),
