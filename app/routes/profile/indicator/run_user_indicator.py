@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import time
 
+from app.routes.profile.indicator.indicator_library.empty import empty
 from app.routes.profile.indicator.indicator_library.plot_indicator import plot
 from app.routes.profile.indicator.indicator_library.print_indicator import custom_print
 
@@ -81,7 +82,8 @@ async def run_user_indicator(user_code: str, data: list[dict]):
             "time": time,
 
             # ✅ Grafik oluşturma fonksiyonu (plot)
-            "plot": lambda *args, **kwargs: plot(indicator_results, *args, **kwargs)
+            "plot": lambda *args, **kwargs: plot(indicator_results, *args, **kwargs),
+            "reach": lambda *args, **kwargs: empty(*args, **kwargs)
         }
 
         # Kullanıcı kodunu çalıştır
