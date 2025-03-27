@@ -6,9 +6,10 @@ import pandas as pd
 import time
 import asyncio
 
-from app.routes.profile.strategy.strategy_library.plot_strategy import plot
-from app.routes.profile.strategy.strategy_library.print_strategy import custom_print
+from app.routes.profile.strategy.strategy_library.empty import empty
+from app.routes.profile.strategy.strategy_library.plot_strategy import plot_strategy
 from app.routes.profile.strategy.strategy_library.import_strategy import indicator
+from app.routes.profile.strategy.strategy_library.print_strategy import custom_print
 
 async def run_user_strategy(strategy_name: str, user_code: str, data: list[dict], user_id, indicator_codes: list[str], db):
     """
@@ -29,6 +30,8 @@ async def run_user_strategy(strategy_name: str, user_code: str, data: list[dict]
 
         # Kullanıcının `print()` çıktıları burada saklanacak
         print_outputs = []  
+
+        user_globals = {}
 
         # ✅ Sonra allowed_globals sözlüğünü tanımla
         allowed_globals = {
@@ -70,7 +73,8 @@ async def run_user_strategy(strategy_name: str, user_code: str, data: list[dict]
                 },
 
                 # ✅ Kullanıcının Print Çıktılarını Kaydetmesi İçin
-                "print": lambda *args, **kwargs: custom_print(print_outputs, *args, **kwargs)
+                "print": lambda *args, **kwargs: empty(*args, **kwargs)
+                #"print": lambda *args, **kwargs: custom_print(print_outputs, *args, **kwargs)
             },
 
             # ✅ NumPy ve Pandas için İzinler
@@ -84,13 +88,19 @@ async def run_user_strategy(strategy_name: str, user_code: str, data: list[dict]
             "time": time,
 
             # ✅ Grafik oluşturma fonksiyonu (plot)
-            "plot": lambda *args, **kwargs: plot(strategy_name, strategy_results, *args, **kwargs),
+            "reach": lambda *args, **kwargs: indicator(user_globals, *args, **kwargs),
+            "plot": lambda *args, **kwargs: empty(*args, **kwargs)
         }
 
         for indicator_code in indicator_codes:
-            await indicator(indicator_code=indicator_code, user_globals=allowed_globals)
+            exec(indicator_code, allowed_globals)
 
+        allowed_globals.update(user_globals)
+        allowed_globals["plot"] = lambda *args, **kwargs: plot_strategy(strategy_name, strategy_results, *args, **kwargs)
+        allowed_globals["__builtins__"]["print"] = lambda *args, **kwargs: custom_print(print_outputs, *args, **kwargs)
+        
         # Kullanıcı kodunu çalıştır
+        
         exec(user_code, allowed_globals)
 
         # Strateji verisini JSON'a uygun hale getir
@@ -113,6 +123,7 @@ async def run_user_strategy(strategy_name: str, user_code: str, data: list[dict]
         strategy_results = convert_to_json_compatible(strategy_results)
 
         # JSON formatına uygun hale getir
+        print(print_outputs)
         return strategy_results, print_outputs
 
     except Exception as e:

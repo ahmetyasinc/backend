@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-def plot(strategy_name, strategy_results, df):
+def plot_strategy(strategy_name, strategy_results, df):
     """
     Kullanıcının trade stratejisini analiz eden ve işlemleri belirleyen fonksiyon.
     """

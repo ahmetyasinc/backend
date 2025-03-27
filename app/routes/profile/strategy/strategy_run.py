@@ -16,7 +16,7 @@ import asyncio
 
 protected_router = APIRouter()
 
-@protected_router.get("/api/run-strategy/")
+@protected_router.post("/api/run-strategy/")
 async def run_strategy(
     strategy_data: StrategyRun,
     db: AsyncSession = Depends(get_db),

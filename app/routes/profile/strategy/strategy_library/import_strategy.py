@@ -1,29 +1,11 @@
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.future import select
-from app.models.profile.indicator.indicator import Indicator  # Eğer model tanımlıysa
-import asyncio
-
-async def indicator(indicator_code: str, user_globals: dict):
+def indicator(user_globals, **kwargs):
     """
-    PostgreSQL'deki indikatör kodunu getirip çalıştırır ve değişkenleri kullanıcıya tanımlar.
+    Değişkenleri user_globals içerisine ekler.
     """
     try:
-        print("İndikatör Kodu:", indicator_code)
-
-        # ✅ `exec` çalıştırılmadan önce mevcut değişkenleri kaydet
-        before_vars = set(user_globals.keys())
-        print("Önceki Değişkenler:", before_vars)
-
-        # ✅ Kullanıcının koduyla aynı ortamda çalıştır (exec)
-        exec(indicator_code, user_globals)
-
-        # ✅ Yeni tanımlanan değişkenleri tespit et ve user_globals içine ekle
-        after_vars = set(user_globals.keys())
-        print("Sonraki Değişkenler:", after_vars)
-        new_vars = after_vars - before_vars  # Yeni eklenen değişkenler
-        print("Yeni Değişkenler:", new_vars)
-
-        return {var: user_globals[var] for var in new_vars}
+        user_globals.update(kwargs)
+        return user_globals
 
     except Exception as e:
-        raise ImportError(f"İndikatör yüklenirken hata oluştu: {str(e)}")
+        raise ImportError(f"İndikatör çalıştırılırken hata oluştu: {str(e)}")
+

@@ -35,6 +35,7 @@ def plot(indicator_results, indicator_name: str, plot_type: str, on_graph: bool,
         if is_valid(value)
     ]
 
+
     # Varsayılan ayarlar (Kullanıcı belirtmezse bunlar kullanılacak)
     plot_settings = {}
 
