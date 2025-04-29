@@ -11,6 +11,8 @@ from app.routes.profile.binance_coins.binance_coins import protected_router as b
 from app.routes.profile.strategy.strategy import protected_router as strategy_router
 from app.routes.profile.strategy.strategy_adjustment import protected_router as strategy_adjustment_router
 from app.routes.profile.strategy.strategy_run import protected_router as strategy_run_router
+from app.routes.profile.strategy.strategy_imports import protected_router as strategy_imports_router
+from app.routes.profile.api_keys.api_keys import protected_router as api_keys_router
 
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -32,7 +34,9 @@ app.include_router(indicator_adjustment_router)
 app.include_router(strategy_router)
 app.include_router(strategy_adjustment_router)
 app.include_router(strategy_run_router)
-
+app.include_router(strategy_imports_router)
+# API KEYS ROUTES
+app.include_router(api_keys_router)
 
 # CORS Middleware ekle
 app.add_middleware(

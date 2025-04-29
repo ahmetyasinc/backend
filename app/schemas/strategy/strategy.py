@@ -12,7 +12,6 @@ class StrategyUpdate(BaseModel):
 
 class StrategyRun(BaseModel):
     strategy_id: int
-    indicator_id: list[int]
     binance_symbol: str
     interval: str
     end: datetime

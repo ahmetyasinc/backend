@@ -1,48 +1,68 @@
 import numpy as np
 import pandas as pd
+import math
 
-def plot_strategy(strategy_name, strategy_results, df):
-    """
-    Kullanıcının trade stratejisini analiz eden ve işlemleri belirleyen fonksiyon.
-    """
+def plot_strategy(strategy_name, strategy_graph, df, commission=0.0, type="line"):
+
+    pd.set_option("display.max_rows", None)  # Satır limiti kaldırılır
+
+    # Tüm sayısal kolonları floata çevir
+    df['position'] = df['position'].astype(float)
+    df['close'] = df['close'].astype(float)
+    commission = float(commission)
+
     if 'position' not in df.columns:
         raise ValueError("DataFrame içinde 'position' sütunu bulunmalıdır!")
+    if 'close' not in df.columns:
+        raise ValueError("DataFrame içinde 'close' sütunu bulunmalıdır!")
 
-    # Eğer indeks datetime değilse, timestamp sütununu datetime'a çevir
+    # Zaman kontrolü
     if not np.issubdtype(df.index.dtype, np.datetime64):
         if 'timestamp' in df.columns:
             df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
         else:
             raise ValueError("DataFrame içinde 'timestamp' sütunu bulunmalı veya indeks datetime olmalı!")
+    else:
+        df['timestamp'] = df.index
 
-    # **Zaman Damgasına Göre Sıralama** (🚀 Hızlı ve stabil sıralama)
     df = df.sort_values(by="timestamp", ascending=True)
 
-    df['position_prev'] = df['position'].shift()
+    # Pozisyon değişimlerini bul
+    df['position_prev'] = df['position'].shift().fillna(0.0)
+    df['position_change'] = df['position'] - df['position_prev']
+
+    # Fiyat değişim oranı
+    df['price_prev'] = df['close'].shift()
+    df['price_change'] = (df['close'] - df['price_prev']) / df['price_prev']
+    df['price_change'] = df['price_change'].shift(-1).fillna(0.0)
+
+    # PnL
+    df['pnl'] = df['price_change'] * df['position']
+
+    # Komisyon: sadece pozisyon değiştiğinde uygulanır
+    df['commission_cost'] = df['position_change'].abs() * commission
+
+    # Net getiri = PnL - komisyon
+    df['net_return'] = df['pnl'] - df['commission_cost']
+
+    # Balance hesabı
+    initial_balance = df['close'].iloc[0]
+    df['balance'] = initial_balance * (1 + df['net_return']).cumprod()
+    df['balance'] = df['balance'].shift().ffill().bfill()
     
-    # Pozisyon değişiklikleri için maskeleri oluştur
-    long_open_mask = (df['position_prev'].le(0)) & (df['position'].gt(0))
-    long_close_mask = (df['position_prev'].gt(0)) & (df['position'].le(0))
-    short_open_mask = (df['position_prev'].ge(0)) & (df['position'].lt(0))
-    short_close_mask = (df['position_prev'].lt(0)) & (df['position'].ge(0))
+    # Geçerli (timestamp, balance) değerlerini seç
+    def is_valid(v):
+        try:
+            return not (pd.isna(v) or math.isinf(v))
+        except Exception:
+            return False
 
-    # **Trade olaylarını listeye ekle (sıralı)**
-    events = []
-    
-    for mask, event_name in zip([long_open_mask, long_close_mask, short_open_mask, short_close_mask],
-                                ["Long Aç", "Long Kapat", "Short Aç", "Short Kapat"]):
-        indices = np.where(mask)[0]
-        if len(indices) > 0:
-            timestamps = df['timestamp'].iloc[indices].dt.strftime('%Y-%m-%dT%H:%M:%S')  # ✅ Yeni Yöntem
-            sizes = np.abs(df['position'].iloc[indices].values)  # Short pozisyonları pozitife çevir
-            events.extend(zip(timestamps, [event_name] * len(indices), sizes))
+    graph_data = [
+        (ts, bal) for ts, bal in zip(df['timestamp'], df['balance']) if is_valid(bal)
+    ]
 
-    # **Final Listeyi Sıralama Garanti (Gerekmez Ama Emin Olmak İçin)**
-    events.sort(key=lambda x: x[0])  # Zaten sıralı, ancak ekstra güvenlik için
-
-    # DataFrame dönüşümü yerine doğrudan liste ile ekleme
-    strategy_results.append({
+    strategy_graph.append({
         "name": strategy_name,
-        "type": "events",
-        "data": events  # ✅ `isoformat()` yerine doğrudan `strftime()` ile dönüşüm yapıldı.
+        "type": type,
+        "data": graph_data
     })

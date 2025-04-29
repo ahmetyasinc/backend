@@ -1,3 +1,5 @@
+import requests
+from typing import List
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.auth import verify_token
@@ -10,30 +12,55 @@ from fastapi import HTTPException
 
 protected_router = APIRouter()
 
-@protected_router.get("/api/add-binance-coin/")
-async def create_coin(
-    coin_data: CoinCreate,
-    db: AsyncSession = Depends(get_db),
-):
-    """Kullanıcı için yeni bir indikatör oluşturur. Eğer aynı isimde indikatör varsa hata döner."""
-    
-    result = await db.execute(select(BinanceCoin).where(BinanceCoin.symbol == coin_data.symbol, BinanceCoin.binance_symbol == coin_data.binance_symbol))
-    existing_coin = result.scalars().first()
+@protected_router.post("/api/fetch-and-add-binance-coins/")
+async def fetch_and_add_binance_coins(db: AsyncSession = Depends(get_db)):
+    # Binance exchangeInfo endpoint'inden verileri çek
+    response = requests.get("https://api.binance.com/api/v3/exchangeInfo")
+    if response.status_code != 200:
+        raise HTTPException(status_code=500, detail="Binance API erişim hatası!")
 
-    if existing_coin:
-        raise HTTPException(status_code=400, detail="Bu sembolde bir coin zaten mevcut!")
+    data = response.json()
+    symbols_data = data.get("symbols", [])
 
-    # Yeni indikatör oluştur
-    new_coin = BinanceCoin(
-        name=coin_data.name,
-        symbol=coin_data.symbol,
-        binance_symbol=coin_data.binance_symbol,
-    )
-    db.add(new_coin)
+    created_coins = []
+    skipped_coins = []
+
+    for item in symbols_data:
+        binance_symbol = item.get("symbol")
+        base_asset = item.get("baseAsset")
+        quote_asset = item.get("quoteAsset")
+
+        # Sadece USDT çiftlerini ekle (örn. BTCUSDT, ETHUSDT)
+        if not binance_symbol.endswith("USDT"):
+            continue
+
+        result = await db.execute(
+            select(BinanceCoin).where(
+                BinanceCoin.symbol == base_asset,
+                BinanceCoin.binance_symbol == binance_symbol
+            )
+        )
+        existing_coin = result.scalars().first()
+
+        if existing_coin:
+            skipped_coins.append(binance_symbol)
+            continue
+
+        new_coin = BinanceCoin(
+            name=base_asset,              # Örnek: Bitcoin, Ethereum, vs.
+            symbol=base_asset,            # BTC, ETH
+            binance_symbol=binance_symbol  # BTCUSDT
+        )
+        db.add(new_coin)
+        created_coins.append(binance_symbol)
+
     await db.commit()
-    await db.refresh(new_coin)
 
-    return {"message": "Coin created successfully"}
+    return {
+        "message": f"{len(created_coins)} coin eklendi.",
+        "eklendi": created_coins,
+        "atlananlar": skipped_coins
+    }
 
 @protected_router.get("/api/get-coin-list/")
 async def get_coin_list(
@@ -105,7 +132,6 @@ async def pin_binance_coin(
     await db.refresh(new_pinned)
 
     return {"message": "Coin added to pinned successfully"}
-
 
 @protected_router.delete("/api/unpin-binance-coin/")
 async def unpin_binance_coin(

@@ -25,7 +25,51 @@ async def binance_websocket(db_pool):
         "btcusdt@kline_2h",   # 2 saat
         "btcusdt@kline_4h",   # 4 saat
         "btcusdt@kline_1d",   # 1 gün
-        "btcusdt@kline_1w"    # 1 hafta
+        "btcusdt@kline_1w",   # 1 hafta
+#
+        #"ethusdt@kline_1m",   # 1 dakika
+        #"ethusdt@kline_3m",   # 3 dakika
+        #"ethusdt@kline_5m",   # 5 dakika
+        #"ethusdt@kline_15m",  # 15 dakika
+        #"ethusdt@kline_30m",  # 30 dakika
+        #"ethusdt@kline_1h",   # 1 saat
+        #"ethusdt@kline_2h",   # 2 saat
+        #"ethusdt@kline_4h",   # 4 saat
+        #"ethusdt@kline_1d",   # 1 gün
+        #"ethusdt@kline_1w",   # 1 hafta
+#
+        #"bnbusdt@kline_1m",   # 1 dakika
+        #"bnbusdt@kline_3m",   # 3 dakika
+        #"bnbusdt@kline_5m",   # 5 dakika
+        #"bnbusdt@kline_15m",  # 15 dakika
+        #"bnbusdt@kline_30m",  # 30 dakika
+        #"bnbusdt@kline_1h",   # 1 saat
+        #"bnbusdt@kline_2h",   # 2 saat
+        #"bnbusdt@kline_4h",   # 4 saat
+        #"bnbusdt@kline_1d",   # 1 gün
+        #"bnbusdt@kline_1w",   # 1 hafta
+#
+        #"solusdt@kline_1m",   # 1 dakika
+        #"solusdt@kline_3m",   # 3 dakika
+        #"solusdt@kline_5m",   # 5 dakika
+        #"solusdt@kline_15m",  # 15 dakika
+        #"solusdt@kline_30m",  # 30 dakika
+        #"solusdt@kline_1h",   # 1 saat
+        #"solusdt@kline_2h",   # 2 saat
+        #"solusdt@kline_4h",   # 4 saat
+        #"solusdt@kline_1d",   # 1 gün
+        #"solusdt@kline_1w",   # 1 hafta
+#
+        #"adausdt@kline_1m",   # 1 dakika
+        #"adausdt@kline_3m",   # 3 dakika
+        #"adausdt@kline_5m",   # 5 dakika
+        #"adausdt@kline_15m",  # 15 dakika
+        #"adausdt@kline_30m",  # 30 dakika
+        #"adausdt@kline_1h",   # 1 saat
+        #"adausdt@kline_2h",   # 2 saat
+        #"adausdt@kline_4h",   # 4 saat
+        #"adausdt@kline_1d",   # 1 gün
+        #"adausdt@kline_1w",   # 1 hafta
     ],
     "id": 1
 }
@@ -46,6 +90,7 @@ async def binance_websocket(db_pool):
                     kline = json_data["k"]
                     is_closed = kline["x"]  # Mum kapanmış mı?
                     interval = kline["i"]   # Zaman aralığı ("1m", "2m")
+                    coin_id = kline["s"].upper()  # Coin ID ("BTCUSDT", "ETHUSDT")
                     
                     if is_closed:  # Eğer mum kapanmışsa kaydet
                         timestamp = datetime.utcfromtimestamp(kline["t"] / 1000)
@@ -58,7 +103,7 @@ async def binance_websocket(db_pool):
                         # ✅ 5️⃣ Veriyi veritabanına kaydet
                         async with db_pool.acquire() as conn:
 
-                            await fill_data_from_binance(conn, "BTCUSDT", interval, timestamp)
+                            await fill_data_from_binance(conn, coin_id, interval, timestamp)
 
                             await conn.execute(
                                 """
@@ -66,7 +111,7 @@ async def binance_websocket(db_pool):
                                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
                                 ON CONFLICT (coin_id, interval, timestamp) DO NOTHING
                                 """,
-                                "BTCUSDT", interval, timestamp, open_price, high_price, low_price, close_price, volume
+                                coin_id, interval, timestamp, open_price, high_price, low_price, close_price, volume
                             )
 
                             # ✅ Eski verileri temizle (5000 kayıt üstü sil)
@@ -80,10 +125,10 @@ async def binance_websocket(db_pool):
                                     LIMIT GREATEST(0, (SELECT COUNT(*) FROM binance_data WHERE coin_id = $1 AND interval = $2) - 5000)
                                 );
                                 """,
-                                "BTCUSDT", interval
+                                coin_id, interval
                             )
 
-                        print(f"✅ New Data: {interval} - BTCUSDT - {timestamp}")
+                        print(f"✅ New Data: {interval} - {coin_id} - {timestamp}")
 
             except websockets.exceptions.ConnectionClosed:
                 print("❌ WebSocket bağlantısı kapandı. Yeniden bağlanıyor...")
@@ -127,12 +172,7 @@ async def fill_data_from_binance(conn, coin_id, interval, latest_timestamp):
                 ts = datetime.utcfromtimestamp(kline[0] / 1000) + timedelta(hours=3)
                 open_price, high_price, low_price, close_price, volume = map(float, kline[1:6])
 
-                insert_queries.append((coin_id, interval, ts, open_price, high_price, low_price, close_price, volume))
-                
-            # 🔹 Toplu veri ekleme (Veritabanına tek sorguda ekler, performans açısından daha iyi)
-            # 🔥 Timestamp formatını düzelt
-            # 🔹 Timestamp'i datetime formatında tutarak doğru veri gönder
-            
+                insert_queries.append((coin_id, interval, ts, open_price, high_price, low_price, close_price, volume))        
 
             for query in insert_queries:
                 await conn.execute(

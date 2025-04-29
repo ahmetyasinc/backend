@@ -1,7 +1,6 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.auth import verify_token
-
 from app.models.profile.indicator.indicator import Indicator
 from app.models.profile.indicator.indicators_favorite import IndicatorsFavorite
 from sqlalchemy.future import select
@@ -88,7 +87,6 @@ async def get_indicators(
     indicators = result.mappings().all()
 
     return {"indicators": [dict(row) for row in indicators]}
-
 
 @protected_router.post("/api/add-indicator/")
 async def create_indicator(

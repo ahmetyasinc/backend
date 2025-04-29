@@ -33,7 +33,7 @@ async def run_indicator(
             BinanceData.timestamp <= indicator_data.end
         )
         .order_by(BinanceData.timestamp.desc())
-        .limit(1000)
+        .limit(5000)
     )
 
     result = await db.execute(query)
@@ -46,7 +46,7 @@ async def run_indicator(
             AND "interval" = :interval
             AND timestamp <= :end_time
             ORDER BY timestamp DESC
-            LIMIT 1000
+            LIMIT 5000
         ) AS subquery
         ORDER BY timestamp ASC;
     """)

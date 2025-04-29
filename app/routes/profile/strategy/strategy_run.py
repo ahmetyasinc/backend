@@ -12,6 +12,7 @@ from sqlalchemy import text
 import time
 from sqlalchemy.future import select
 import asyncio
+from sqlalchemy import select, and_, or_
 
 
 protected_router = APIRouter()
@@ -22,19 +23,35 @@ async def run_strategy(
     db: AsyncSession = Depends(get_db),
     user_id: dict = Depends(verify_token)
 ):
-    """Gönderilen coin_id, interval ve end değerlerine göre binance_data tablosundan veri çeker, stratejiü doğrular ve çalıştırır."""
+    """Gönderilen strategy_id, coin_id, interval ve end değerlerine göre binance_data tablosundan veri çeker, stratejiyi doğrular ve çalıştırır."""
 
-    start_time = time.time()  # Fonksiyon başlangıcındaki zaman damgası
-
-    # Kullanıcının ID'sini al
+    start_time = time.time()
     current_user_id = int(user_id)
 
-    # Kullanıcının sahip olduğu veya public olan indicator'leri çek
+    # 🎯 1. Stratejiyi çek
+    strategy_result = await db.execute(select(Strategy).where(Strategy.id == strategy_data.strategy_id))
+    strategy = strategy_result.scalars().first()
+
+    if not strategy:
+        raise HTTPException(status_code=404, detail="Strateji bulunamadı.")
+
+    # 🎯 2. Erişim kontrolü
+    if strategy.user_id != current_user_id:
+        raise HTTPException(status_code=403, detail="Bu stratejiye erişim yetkiniz yok.")
+
+
+    # 🎯 4. Kullanıcının erişebileceği indikatörleri çek
     stmt = select(Indicator.id, Indicator.code).where(
-        (Indicator.id.in_(strategy_data.indicator_id)) & 
-        ((Indicator.user_id == current_user_id) | (Indicator.public == True))
+    and_(
+        Indicator.id.in_(strategy.indicator_ids or []),
+        or_(
+            Indicator.user_id == current_user_id,
+            Indicator.public.is_(True),
+            Indicator.tecnic.is_(True)
+        )
     )
-    
+)
+
     result = await db.execute(stmt)
     indicators = result.all()
 
@@ -42,7 +59,8 @@ async def run_strategy(
     valid_indicator_ids = {row[0] for row in indicators}
     
     # Geçersiz ID olup olmadığını kontrol et
-    invalid_ids = set(strategy_data.indicator_id) - valid_indicator_ids
+    indicator_ids = strategy.indicator_ids or []
+    invalid_ids = set(indicator_ids) - valid_indicator_ids
     if invalid_ids:
         raise HTTPException(status_code=403, detail=f"Erişim reddedildi! Geçersiz indikatör ID'leri: {list(invalid_ids)}")
 
@@ -71,7 +89,7 @@ async def run_strategy(
             AND "interval" = :interval
             AND timestamp <= :end_time
             ORDER BY timestamp DESC
-            LIMIT 1000
+            LIMIT 5000
         ) AS subquery
         ORDER BY timestamp ASC;
     """)
@@ -116,9 +134,9 @@ async def run_strategy(
     ]
 
     # **5️⃣ Kullanıcının strateji kodunu çalıştır**
-    strategy_result, print_outputs = await run_user_strategy(strategy.name, strategy.code, historical_data, int(user_id), indicator_codes, db)
+    strategy_result, strategy_graph, print_outputs = await run_user_strategy(strategy.name, strategy.code, historical_data, int(user_id), indicator_codes, db)
 
     end_time = time.time()  # Fonksiyon bitişindeki zaman damgası
     execution_time = end_time - start_time  # Çalışma süresi hesaplanıyor
 
-    return {"strategy_id": strategy.id, "execution_time": execution_time, "strategy_result": strategy_result, "prints": print_outputs}
+    return {"strategy_id": strategy.id, "execution_time": execution_time, "strategy_result": strategy_result, "strategy_graph": strategy_graph, "prints": print_outputs}
