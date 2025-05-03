@@ -1,0 +1,3262 @@
+[
+    {
+        "bot_id": 1,
+        "results": [
+            {
+                "coin_id": "BTCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 94106.1429,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 1743.1524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BNBUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 594.7623,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ADAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.682902,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "SOLUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 144.5103,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            }
+        ]
+    },
+    {
+        "bot_id": 2,
+        "results": [
+            {
+                "coin_id": "BTCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 94106.1429,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1743.1524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BNBUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 594.7623,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ADAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.682902,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "SOLUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 144.5103,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            }
+        ]
+    },
+    {
+        "bot_id": 52,
+        "results": [
+            {
+                "coin_id": "BTCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 94106.1429,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1743.1524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BNBUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 594.7623,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BCCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 444.21299999999997,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "NEOUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 6.1677,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "LTCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 83.8035,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "QTUMUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 2.18493,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ADAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.682902,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "XRPUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 2.25126,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "EOSUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 0.681417,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "TUSDUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.988416,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "IOTAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.21621600000000002,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "XLMUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.28007099999999996,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ONTUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.153252,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "TRXUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.243837,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 16.6023,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ICXUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.102168,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "VENUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 9.900000000000001e-05,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "NULSUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.025542,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "VETUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.0264726,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "PAXUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.989604,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BCHABCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 217.8792,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BCHSVUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 58.311,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "USDCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.989604,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "LINKUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 14.4243,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "WAVESUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 1.06524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BTTUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.00274923,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "USDSUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.986832,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ONGUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.204534,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "HOTUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.00104148,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ZILUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.012672000000000001,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ZRXUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.268488,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "FETUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.70587,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BATUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.151074,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "XMRUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 117.513,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ZECUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 36.1449,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "IOSTUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.00393228,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "CELRUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.0102465,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "DASHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 23.5323,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "NANOUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 2.20176,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "OMGUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.37917,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "THETAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.7256699999999999,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ENJUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 0.085041,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "MITHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.0034154999999999997,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "MATICUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.375606,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ATOMUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 4.393619999999999,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "TFUELUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.0369072,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ONEUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.013226400000000001,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "FTMUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.692406,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ALGOUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 0.226512,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "USDSBUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.989703,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "GTOUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.012206700000000001,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ERDUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.0195129,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "DOGEUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.1737648,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "DUSKUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.085239,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ANKRUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.0198693,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "WINUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 5.3667899999999995e-05,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "COSUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.003564,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "NPXSUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.006959799,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "COCOSUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1.7370539999999999,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "MTLUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.8325899999999999,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "TOMOUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1.3680809999999999,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "PERLUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.004554,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "DENTUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.00079992,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "MFTUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 0.00520146,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "KEYUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.00124047,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "STORMUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.00336303,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "DOCKUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.003861,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "WANUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.117216,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "FUNUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.00588357,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "CVCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.110781,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "CHZUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.0414216,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BANDUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.8325899999999999,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BUSDUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.990297,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BEAMUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.064548,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            }
+        ]
+    },
+    {
+        "bot_id": 56,
+        "results": [
+            {
+                "coin_id": "BTCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 94106.1429,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1743.1524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BNBUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 594.7623,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ADAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.682902,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "SOLUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 144.5103,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            }
+        ]
+    },
+    {
+        "bot_id": 57,
+        "results": [
+            {
+                "coin_id": "BTCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 94106.1429,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1743.1524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BNBUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 594.7623,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ADAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.682902,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "SOLUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 144.5103,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            }
+        ]
+    },
+    {
+        "bot_id": 59,
+        "results": [
+            {
+                "coin_id": "BTCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 94106.1429,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1743.1524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BNBUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 594.7623,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ADAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.682902,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "SOLUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 144.5103,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            }
+        ]
+    },
+    {
+        "bot_id": 60,
+        "results": [
+            {
+                "coin_id": "BTCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 94106.1429,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1743.1524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BNBUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 594.7623,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ADAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.682902,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "SOLUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 144.5103,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            }
+        ]
+    },
+    {
+        "bot_id": 62,
+        "results": [
+            {
+                "coin_id": "BTCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 94106.1429,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1743.1524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BNBUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 594.7623,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ADAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.682902,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "SOLUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 144.5103,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            }
+        ]
+    },
+    {
+        "bot_id": 50,
+        "results": [
+            {
+                "coin_id": "BTCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 94106.1429,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1743.1524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BNBUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 594.7623,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ADAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.682902,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "SOLUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 144.5103,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            }
+        ]
+    },
+    {
+        "bot_id": 51,
+        "results": [
+            {
+                "coin_id": "BTCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 94106.1429,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1743.1524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BNBUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 594.7623,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ADAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.682902,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "SOLUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 144.5103,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            }
+        ]
+    },
+    {
+        "bot_id": 63,
+        "results": [
+            {
+                "coin_id": "BTCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 94106.1429,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1743.1524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BNBUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 594.7623,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ADAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.682902,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "SOLUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 144.5103,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            }
+        ]
+    },
+    {
+        "bot_id": 54,
+        "results": [
+            {
+                "coin_id": "BTCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 94106.1429,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1743.1524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BNBUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 594.7623,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BCCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 444.21299999999997,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "NEOUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 6.1677,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "LTCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 83.8035,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "QTUMUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 2.18493,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ADAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.682902,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "XRPUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 2.25126,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "EOSUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 0.681417,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "TUSDUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.988416,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "IOTAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.21621600000000002,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "XLMUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.28007099999999996,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ONTUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.153252,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "TRXUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.243837,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 16.6023,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ICXUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.102168,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "VENUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 9.900000000000001e-05,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "NULSUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.025542,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "VETUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.0264726,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "PAXUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.989604,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BCHABCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 217.8792,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BCHSVUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 58.311,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "USDCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.989604,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "LINKUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 14.4243,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "WAVESUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 1.06524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BTTUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.00274923,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "USDSUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.986832,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ONGUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.204534,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "HOTUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.00104148,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ZILUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.012672000000000001,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ZRXUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.268488,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "FETUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.70587,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BATUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.151074,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "XMRUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 117.513,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ZECUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 36.1449,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "IOSTUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.00393228,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "CELRUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.0102465,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "DASHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 23.5323,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "NANOUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 2.20176,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "OMGUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.37917,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "THETAUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.7256699999999999,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ENJUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 0.085041,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "MITHUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.0034154999999999997,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "MATICUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.375606,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ATOMUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 4.393619999999999,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "TFUELUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.0369072,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ONEUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.013226400000000001,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "FTMUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.692406,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ALGOUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    1,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 0.226512,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "USDSBUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.989703,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "GTOUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.012206700000000001,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ERDUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.0195129,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "DOGEUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.1737648,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "DUSKUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.085239,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ANKRUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.0198693,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "WINUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 5.3667899999999995e-05,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "COSUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.003564,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "NPXSUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.006959799,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "COCOSUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1.7370539999999999,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "MTLUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.8325899999999999,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "TOMOUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1.3680809999999999,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "PERLUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.004554,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "DENTUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.00079992,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "MFTUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    1
+                ],
+                "order_type": "market",
+                "limit_price": 0.00520146,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "KEYUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.00124047,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "STORMUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.00336303,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "DOCKUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.003861,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "WANUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.117216,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "FUNUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.00588357,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "CVCUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.110781,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "CHZUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.0414216,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BANDUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.8325899999999999,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BUSDUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.990297,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BEAMUSDT",
+                "period": "1m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.064548,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            }
+        ]
+    }
+]

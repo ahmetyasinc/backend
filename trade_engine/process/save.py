@@ -1,11 +1,9 @@
+import datetime
 import json
 import asyncio
 import numpy as np
 import decimal
-from datetime import datetime
 import os
-
-from collections import defaultdict
 
 def group_results_by_bot(all_results):
     from collections import defaultdict
@@ -47,22 +45,34 @@ def convert_json_compatible(obj):
         return [convert_json_compatible(i) for i in obj]
     return obj
 
-async def save_result_to_json(result):
+
+async def save_result_to_json(result, last_time, interval):
     loop = asyncio.get_running_loop()
     result = convert_json_compatible(result)
 
-    os.makedirs("results", exist_ok=True)
+    # Dosya yolu: results/1m/
+    folder = os.path.join("results", interval)
+    os.makedirs(folder, exist_ok=True)
 
-    now_str = datetime.now().strftime("%Y-%m-%d_%H-%M")
-    filename = f"results/{now_str}.json"
+    # Zamanı datetime objesine çevir
+    if isinstance(last_time, str):
+        try:
+            last_time = datetime.fromisoformat(last_time)
+        except ValueError:
+            last_time = datetime.strptime(last_time, "%Y-%m-%d %H:%M:%S")
+
+    # Dosya adı: 2025-04-29_13-53-00.json
+    filename = last_time.strftime("%Y-%m-%d_%H-%M-%S.json")
+    filepath = os.path.join(folder, filename)
 
     def write_json():
         try:
-            with open(filename, "w") as f:
-                json.dump(result, f, indent=4)  # 🔹 Tüm liste tek seferde yazılır
+            with open(filepath, "w") as f:
+                json.dump(result, f, indent=4)
         except Exception as e:
             print(f"JSON yazma hatası: {e}")
 
     await loop.run_in_executor(None, write_json)
+
 
 

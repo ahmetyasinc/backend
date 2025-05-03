@@ -1,0 +1,87 @@
+[
+    {
+        "bot_id": 55,
+        "results": [
+            {
+                "coin_id": "BTCUSDT",
+                "period": "15m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 94194.2628,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ETHUSDT",
+                "period": "15m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 1743.1524,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "BNBUSDT",
+                "period": "15m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 594.8514,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "ADAUSDT",
+                "period": "15m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 0.682605,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            },
+            {
+                "coin_id": "SOLUSDT",
+                "period": "15m",
+                "status": "success",
+                "last_positions": [
+                    0,
+                    0
+                ],
+                "order_type": "market",
+                "limit_price": 144.46079999999998,
+                "stop_price": 0.0,
+                "stop_limit_price": 0.0,
+                "callback_rate": 0.0,
+                "activation_price": 0.0,
+                "time_in_force": ""
+            }
+        ]
+    }
+]

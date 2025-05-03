@@ -31,7 +31,7 @@ def run_bot(bot, strategy_code, indicator_list, coin_data_dict):
         return {"bot_id": bot['id'], "status": "no_data", "duration": 0.0}
 
     try:
-        print(f"Bot ID: {bot['id']} çalıştırılıyor...")
+        #print(f"Bot ID: {bot['id']} çalıştırılıyor...")
         results = []
 
         for coin_id in bot['stocks']:
@@ -88,7 +88,7 @@ def run_bot(bot, strategy_code, indicator_list, coin_data_dict):
             results.append(result_entry)
 
         duration = time.time() - start_time
-        print(f"✅ Bot ID: {bot['id']} tamamlandı. Süre: {duration:.2f} saniye")
+        #print(f"✅ Bot ID: {bot['id']} tamamlandı. Süre: {duration:.2f} saniye")
 
         # 💡 Toplam sürenin de eklenmesi için metadata objesi
         return {

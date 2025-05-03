@@ -7,11 +7,11 @@ from .run_bot import run_bot
 from concurrent.futures import ProcessPoolExecutor
 from os import cpu_count  # CPU çekirdek sayısını otomatik almak için
 
-async def run_all_bots_async(bots, strategies_with_indicators, coin_data_dict):
+async def run_all_bots_async(bots, strategies_with_indicators, coin_data_dict, last_time, interval):
     loop = asyncio.get_running_loop()
 
     max_workers = min(len(bots), max(1, int(cpu_count() / 2)))  # En az 1
-    print(f"Max workers: {max_workers}")
+    #print(f"Max workers: {max_workers}")
 
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
         tasks = []
@@ -50,15 +50,15 @@ async def run_all_bots_async(bots, strategies_with_indicators, coin_data_dict):
 
         # 🔹 Grupla ve JSON’a kaydet
         grouped_results = group_results_by_bot(all_results)
-        await save_result_to_json(grouped_results)
+        await save_result_to_json(grouped_results, last_time, interval)
 
         # 🔹 Süre tablosunu yazdır
-        if durations:
-            durations.sort(key=lambda x: x[1], reverse=True)
-            print("\n🧾 BOT SÜRE TABLOSU:")
-            print("{:<10} {:<10}".format("Bot ID", "Süre (s)"))
-            print("-" * 25)
-            for bot_id, dur in durations:
-                print(f"{bot_id:<10} {dur:<10}")
+        #if durations:
+        #    durations.sort(key=lambda x: x[1], reverse=True)
+        #    print("\n🧾 BOT SÜRE TABLOSU:")
+        #    print("{:<10} {:<10}".format("Bot ID", "Süre (s)"))
+        #    print("-" * 25)
+        #    for bot_id, dur in durations:
+        #        print(f"{bot_id:<10} {dur:<10}")
 
         return all_results
