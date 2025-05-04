@@ -6,11 +6,13 @@ import ta
 import asyncio
 from decimal import Decimal
 
+from control.control_the_results import control_the_results
+
+
 from .library.empty import empty
 
 
 def run_bot(bot, strategy_code, indicator_list, coin_data_dict):
-    start_time = time.time()  # 🕒 Başlangıç zamanı
 
     order_fields = {
         "order_type": "", "limit_price": 0.0, "stop_price": 0.0, "stop_limit_price": 0.0,
@@ -31,7 +33,6 @@ def run_bot(bot, strategy_code, indicator_list, coin_data_dict):
         return {"bot_id": bot['id'], "status": "no_data", "duration": 0.0}
 
     try:
-        #print(f"Bot ID: {bot['id']} çalıştırılıyor...")
         results = []
 
         for coin_id in bot['stocks']:
@@ -74,26 +75,26 @@ def run_bot(bot, strategy_code, indicator_list, coin_data_dict):
 
             result_df = allowed_globals['df']
             last_positions = result_df['position'].iloc[-2:].tolist() if 'position' in result_df.columns and len(result_df) >= 2 else None
+            last_percentage = result_df['percentage'].iloc[-2:].tolist() if 'percentage' in result_df.columns and len(result_df) >= 2 else None
 
             order_info = {
-                field: result_df[field].iloc[-1] if field in result_df.columns and len(result_df) > 0 else default
-                for field, default in order_fields.items()
+                field: result_df[field].iloc[-1]
+                for field in order_fields
+                if field in result_df.columns and len(result_df) > 0
             }
 
             result_entry = {
-                "bot_id": bot['id'], "coin_id": coin_id, "period": bot['period'],
-                "status": "success", "last_positions": last_positions
+                "bot_id": bot['id'], "coin_id": coin_id, #"period": bot['period'],
+                "status": "success", "last_positions": last_positions, "last_percentage": last_percentage,
             }
             result_entry.update(order_info)
             results.append(result_entry)
 
-        duration = time.time() - start_time
-        #print(f"✅ Bot ID: {bot['id']} tamamlandı. Süre: {duration:.2f} saniye")
+        results = control_the_results(bot['id'], results)
 
         # 💡 Toplam sürenin de eklenmesi için metadata objesi
         return {
             "bot_id": bot['id'],
-            "duration": duration,
             "status": "success",
             "results": results
         }
@@ -102,5 +103,5 @@ def run_bot(bot, strategy_code, indicator_list, coin_data_dict):
         import traceback
         error_msg = f"{str(e)}\n{traceback.format_exc()}"
         print(f"Bot ID: {bot['id']} çalışırken hata oluştu:\n{error_msg}")
-        return {"bot_id": bot['id'], "status": "error", "error": error_msg, "duration": time() - start_time}
+        return {"bot_id": bot['id'], "status": "error", "error": error_msg}
 

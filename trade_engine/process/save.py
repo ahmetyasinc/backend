@@ -5,29 +5,17 @@ import numpy as np
 import decimal
 import os
 
-def group_results_by_bot(all_results):
+def aggregate_results_by_bot_id(all_results):
     from collections import defaultdict
 
-    grouped = defaultdict(list)
+    result = defaultdict(list)
 
-    for result in all_results:
-        bot_id = result["bot_id"]
+    for res in all_results:
+        bot_id = res["bot_id"]
+        coin_data = {key: value for key, value in res.items() if key != "bot_id"}
+        result[bot_id].append(coin_data)
 
-        # 🔹 Bot'a ait coin bilgileri + tüm ekstra bilgiler
-        coin_result = {key: value for key, value in result.items() if key != "bot_id"}
-
-        grouped[bot_id].append(coin_result)
-
-    # 🔹 JSON yazımı için liste formatına dönüştür
-    final_grouped = []
-    for bot_id, coin_results in grouped.items():
-        final_grouped.append({
-            "bot_id": bot_id,
-            "results": coin_results
-        })
-
-    return final_grouped
-
+    return dict(result)  # defaultdict yerine düz dict döndürmek daha güvenli
 
 
 def convert_json_compatible(obj):
@@ -61,7 +49,6 @@ async def save_result_to_json(result, last_time, interval):
         except ValueError:
             last_time = datetime.strptime(last_time, "%Y-%m-%d %H:%M:%S")
 
-    # Dosya adı: 2025-04-29_13-53-00.json
     filename = last_time.strftime("%Y-%m-%d_%H-%M-%S.json")
     filepath = os.path.join(folder, filename)
 

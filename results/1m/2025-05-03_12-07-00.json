@@ -1,0 +1,96 @@
+{
+    "59": [
+        {
+            "coin_id": "BTCUSDT",
+            "status": "success",
+            "order_type": "market",
+            "stop_price": 500,
+            "side": "buy",
+            "value": 105.83999999999999
+        }
+    ],
+    "60": [
+        {
+            "coin_id": "BTCUSDT",
+            "status": "success",
+            "order_type": "market",
+            "side": "sell",
+            "positionside": "short",
+            "value": 122.39999999999999
+        }
+    ],
+    "50": [
+        {
+            "coin_id": "BTCUSDT",
+            "status": "success",
+            "order_type": "market",
+            "side": "buy",
+            "value": 28.799999999999997
+        },
+        {
+            "coin_id": "ETHUSDT",
+            "status": "success",
+            "order_type": "market",
+            "side": "buy",
+            "value": 28.799999999999997
+        }
+    ],
+    "51": [
+        {
+            "coin_id": "BTCUSDT",
+            "status": "success",
+            "order_type": "market",
+            "side": "sell",
+            "positionside": "short",
+            "leverage": -1.0,
+            "value": 36.9
+        },
+        {
+            "coin_id": "ETHUSDT",
+            "status": "success",
+            "order_type": "market",
+            "side": "sell",
+            "positionside": "short",
+            "leverage": -1.0,
+            "value": 36.9
+        }
+    ],
+    "56": [
+        {
+            "coin_id": "BTCUSDT",
+            "status": "success",
+            "order_type": "market",
+            "side": "sell",
+            "positionside": "short",
+            "value": 28.080000000000002
+        },
+        {
+            "coin_id": "ETHUSDT",
+            "status": "success",
+            "order_type": "market",
+            "side": "sell",
+            "positionside": "short",
+            "value": 48.879999999999995
+        }
+    ],
+    "57": [
+        {
+            "coin_id": "BTCUSDT",
+            "status": "success",
+            "order_type": "market",
+            "side": "buy",
+            "positionside": "long",
+            "leverage": 2.0,
+            "value": 18.76
+        },
+        {
+            "coin_id": "ETHUSDT",
+            "status": "success",
+            "order_type": "market",
+            "side": "buy",
+            "positionside": "long",
+            "leverage": 2.0,
+            "value": 18.76
+        }
+    ]
+}
