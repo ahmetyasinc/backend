@@ -29,13 +29,10 @@ def create_refresh_token(data: dict, expires_delta: Optional[timedelta] = None):
 
 def verify_token(request:Request):
     auth_token = request.cookies.get("access_token")
-    print(auth_token)
     if not auth_token:
         raise HTTPException(status_code=401, detail="Authentication required")
-
     try:
         payload = jwt.decode(auth_token, SECRET_KEY, algorithms=["HS256"])
-        print(payload)
         user_id = payload.get("sub")
         if not user_id:
             raise HTTPException(status_code=401, detail="Invalid token")

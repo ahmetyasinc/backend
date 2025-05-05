@@ -1,0 +1,66 @@
+{
+    "59": [
+        {
+            "coin_id": "BTCUSDT",
+            "status": "success",
+            "order_type": "market",
+            "stop_price": 500,
+            "side": "buy",
+            "value": 105.83999999999999
+        }
+    ],
+    "60": [
+        {
+            "coin_id": "BTCUSDT",
+            "status": "success",
+            "order_type": "market",
+            "side": "sell",
+            "positionside": "short",
+            "value": 122.39999999999999
+        }
+    ],
+    "50": [
+        {
+            "status": "error",
+            "error": "unsupported operand type(s) for *: 'float' and 'decimal.Decimal'\nTraceback (most recent call last):\n  File \"c:\\Users\\ahmet\\OneDrive\\Masa\u00fcst\u00fc\\Balina Megasolo\\last\\balina\\backend\\trade_engine\\process\\run_bot.py\", line 74, in run_bot\n    exec(strategy_code, allowed_globals)\n  File \"<string>\", line 15, in <module>\n  File \"C:\\Users\\ahmet\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pandas\\core\\frame.py\", line 10374, in apply\n    return op.apply().__finalize__(self, method=\"apply\")\n           ^^^^^^^^^^\n  File \"C:\\Users\\ahmet\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pandas\\core\\apply.py\", line 916, in apply\n    return self.apply_standard()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\ahmet\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pandas\\core\\apply.py\", line 1063, in apply_standard\n    results, res_index = self.apply_series_generator()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\ahmet\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pandas\\core\\apply.py\", line 1081, in apply_series_generator\n    results[i] = self.func(v, *self.args, **self.kwargs)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 8, in get_position\nTypeError: unsupported operand type(s) for *: 'float' and 'decimal.Decimal'\n"
+        }
+    ],
+    "56": [
+        {
+            "coin_id": "BTCUSDT",
+            "status": "success",
+            "order_type": "market",
+            "side": "sell",
+            "positionside": "short",
+            "value": 28.080000000000002
+        },
+        {
+            "coin_id": "ETHUSDT",
+            "status": "success",
+            "order_type": "market",
+            "side": "sell",
+            "positionside": "short",
+            "value": 48.879999999999995
+        }
+    ],
+    "57": [
+        {
+            "coin_id": "BTCUSDT",
+            "status": "success",
+            "order_type": "market",
+            "side": "buy",
+            "positionside": "long",
+            "leverage": 2.0,
+            "value": 18.76
+        },
+        {
+            "coin_id": "ETHUSDT",
+            "status": "success",
+            "order_type": "market",
+            "side": "buy",
+            "positionside": "long",
+            "leverage": 2.0,
+            "value": 18.76
+        }
+    ]
+}
