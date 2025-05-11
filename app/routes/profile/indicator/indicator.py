@@ -5,6 +5,7 @@ from app.models.profile.indicator.indicator import Indicator
 from app.models.profile.indicator.indicators_favorite import IndicatorsFavorite
 from sqlalchemy.future import select
 from app.database import get_db
+from app.routes.profile.indicator.input.input import extract_user_inputs
 from app.schemas.indicator.indicator import IndicatorCreate, IndicatorUpdate
 from fastapi import HTTPException
 
@@ -58,7 +59,9 @@ async def get_tecnic_indicators(
     )
     public_indicators = result.mappings().all()
 
-    return {"tecnic_indicators": public_indicators}
+    return {
+        "tecnic_indicators": public_indicators
+    }
 
 @protected_router.get("/api/get-indicators/")
 async def get_indicators(

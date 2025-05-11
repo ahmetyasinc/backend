@@ -10,7 +10,6 @@ protected_router = APIRouter()
 @protected_router.get("/api/get-binance-data/")
 async def get_binance_data(symbol: str, interval: str, db: AsyncSession = Depends(get_db), user_id: dict = Depends(verify_token)):
     """Veritabanından belirtilen sembol ve zaman aralığındaki son 1000 veriyi JSON olarak getirir."""
-    print(user_id + " kullanıcısı veri sorguluyor...")
     query = text("""
         SELECT jsonb_agg(jsonb_build_object(
             'timestamp', timestamp,

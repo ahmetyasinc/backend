@@ -36,15 +36,12 @@ logger = logging.getLogger(__name__)
 
 @router.post("/api/login/")
 async def login(response: Response, data: LoginRequest, db: AsyncSession = Depends(get_db)):
-    print(data)
     username = data.username
     password = data.password
-    print(username, password)
     # Veritabanında kullanıcıyı sorgula
 
     result = await db.execute(select(User).where(User.username == username))
     user = result.scalars().first()
-    print(user)
     if not user:
         raise HTTPException(status_code=401, detail="Geçersiz kullanıcı adı veya şifre!")
 
