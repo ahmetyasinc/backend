@@ -10,6 +10,73 @@ from fastapi import HTTPException
 
 protected_router = APIRouter()
 
+@protected_router.get("/api/all-strategies/")
+async def get_all_strategies(
+    db: AsyncSession = Depends(get_db),
+    user_id: dict = Depends(verify_token)
+):
+    """Tüm türdeki indikatörleri (kişisel, teknik, topluluk) tek API ile döner."""
+
+    user_id = int(user_id)
+
+    # 1. Kullanıcının kişisel indikatörleri
+    user_result = await db.execute(
+        select(
+            Strategy.id,
+            Strategy.name,
+            Strategy.code,
+            Strategy.created_at,
+            Strategy.public,
+            StrategiesFavorite.id.isnot(None).label("favorite")
+        )
+        .outerjoin(StrategiesFavorite,
+                   (StrategiesFavorite.strategy_id == Strategy.id) & 
+                   (StrategiesFavorite.user_id == user_id))
+        .where(Strategy.user_id == user_id)
+    )
+    personal = user_result.mappings().all()
+
+    # 2. Teknik (tecnic) indikatörler
+    tecnic_result = await db.execute(
+        select(
+            Strategy.id,
+            Strategy.name,
+            Strategy.code,
+            Strategy.public,
+            Strategy.tecnic,
+            StrategiesFavorite.id.isnot(None).label("favorite")
+        )
+        .outerjoin(StrategiesFavorite,
+                   (StrategiesFavorite.strategy_id == Strategy.id) & 
+                   (StrategiesFavorite.user_id == user_id))
+        .where(Strategy.tecnic == True)
+    )
+    tecnic = tecnic_result.mappings().all()
+
+    # 3. Topluluk (public) indikatörler
+    public_result = await db.execute(
+        select(
+            Strategy.id,
+            Strategy.name,
+            Strategy.code,
+            Strategy.public,
+            Strategy.tecnic,
+            StrategiesFavorite.id.isnot(None).label("favorite")
+        )
+        .outerjoin(StrategiesFavorite,
+                   (StrategiesFavorite.strategy_id == Strategy.id) & 
+                   (StrategiesFavorite.user_id == user_id))
+        .where(Strategy.public == True)
+    )
+    public = public_result.mappings().all()
+
+    return {
+        "personal_strategies": [dict(row) for row in personal],
+        "tecnic_strategies": [dict(row) for row in tecnic],
+        "public_strategies": [dict(row) for row in public],
+    }
+
+
 @protected_router.get("/api/public-strategies/")
 async def get_public_strategies(
     db: AsyncSession = Depends(get_db),

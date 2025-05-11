@@ -68,6 +68,7 @@ async def run_user_strategy(strategy_name: str, user_code: str, data: list[dict]
                 "tuple": tuple,
                 "set": set,
                 "float": float,
+                "str": str,
                 "Decimal": Decimal,
 
                 # ✅ Matematiksel Fonksiyonlar
@@ -196,6 +197,7 @@ async def run_updated_user_strategy(strategy_name: str, user_code: str, data: li
                 "tuple": tuple,
                 "set": set,
                 "float": float,
+                "str": str,
                 "Decimal": Decimal,
 
                 # ✅ Matematiksel Fonksiyonlar

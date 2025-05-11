@@ -11,6 +11,72 @@ from fastapi import HTTPException
 
 protected_router = APIRouter()
 
+@protected_router.get("/api/all-indicators/")
+async def get_all_indicators(
+    db: AsyncSession = Depends(get_db),
+    user_id: dict = Depends(verify_token)
+):
+    """Tüm türdeki indikatörleri (kişisel, teknik, topluluk) tek API ile döner."""
+
+    user_id = int(user_id)
+
+    # 1. Kullanıcının kişisel indikatörleri
+    user_result = await db.execute(
+        select(
+            Indicator.id,
+            Indicator.name,
+            Indicator.code,
+            Indicator.created_at,
+            Indicator.public,
+            IndicatorsFavorite.id.isnot(None).label("favorite")
+        )
+        .outerjoin(IndicatorsFavorite,
+                   (IndicatorsFavorite.indicator_id == Indicator.id) & 
+                   (IndicatorsFavorite.user_id == user_id))
+        .where(Indicator.user_id == user_id)
+    )
+    personal = user_result.mappings().all()
+
+    # 2. Teknik (tecnic) indikatörler
+    tecnic_result = await db.execute(
+        select(
+            Indicator.id,
+            Indicator.name,
+            Indicator.code,
+            Indicator.public,
+            Indicator.tecnic,
+            IndicatorsFavorite.id.isnot(None).label("favorite")
+        )
+        .outerjoin(IndicatorsFavorite,
+                   (IndicatorsFavorite.indicator_id == Indicator.id) & 
+                   (IndicatorsFavorite.user_id == user_id))
+        .where(Indicator.tecnic == True)
+    )
+    tecnic = tecnic_result.mappings().all()
+
+    # 3. Topluluk (public) indikatörler
+    public_result = await db.execute(
+        select(
+            Indicator.id,
+            Indicator.name,
+            Indicator.code,
+            Indicator.public,
+            Indicator.tecnic,
+            IndicatorsFavorite.id.isnot(None).label("favorite")
+        )
+        .outerjoin(IndicatorsFavorite,
+                   (IndicatorsFavorite.indicator_id == Indicator.id) & 
+                   (IndicatorsFavorite.user_id == user_id))
+        .where(Indicator.public == True)
+    )
+    public = public_result.mappings().all()
+
+    return {
+        "personal_indicators": [dict(row) for row in personal],
+        "tecnic_indicators": [dict(row) for row in tecnic],
+        "public_indicators": [dict(row) for row in public],
+    }
+
 @protected_router.get("/api/public-indicators/")
 async def get_public_indicators(
     db: AsyncSession = Depends(get_db),

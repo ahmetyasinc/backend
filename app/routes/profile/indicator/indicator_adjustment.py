@@ -40,7 +40,8 @@ async def add_favorite_indicator(
     existing_favorite = result.scalars().first()
 
     if existing_favorite:
-        raise HTTPException(status_code=400, detail="Bu gösterge zaten favorilere eklenmiş!")
+        return {"message": "Indicator added to favorites successfully"}
+        #raise HTTPException(status_code=400, detail="Bu gösterge zaten favorilere eklenmiş!")
 
     # Yeni favori kaydı oluştur
     new_favorite = IndicatorsFavorite(
